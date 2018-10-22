@@ -1,81 +1,96 @@
 \documentclass[letterpaper,10pt,oneside]{article}
-\usepackage[utf8]{inputenc}
 \usepackage{setspace}
 
 \usepackage[left=1in, right=1in, bottom=1in, top=1in]{geometry}
-
 \pagenumbering{gobble}
+
+\usepackage{fontspec,kantlipsum}
+\defaultfontfeatures[Fira Sans]
+{
+Extension      = .otf ,
+UprightFont    = FiraSans-Light,
+BoldFont       = FiraSans-Medium,
+ItalicFont     = FiraSans-RegularItalic,
+BoldItalicFont = FiraSans-BoldItalic,
+}
+\setmainfont{Fira Sans}
+\linespread{1.25}
+
+\newcommand\entrytitle[1]{{\addfontfeature{LetterSpace=2}\textbf{#1}}}
 
 \begin{document}
 
 \begin{center}
     \Large{\textbf{Kevin Phoenix}} \normalsize \\
+    \vspace{1mm}
     kevin@kphoenix.us --- https://kphoenix.us --- https://github.com/twizmwazin
 \end{center}
+
 
 \noindent
 \begin{tabular}{@{} l l}
 
-  \Large{Objective}
-  & To obtain a full-time position in the field of Computer Science. \\
+  \textit{Objective}
+  & Graduating student looking for a full-time role in software engineering. \\
   & \\
 
-  \Large{Education}
-  & \textbf{Rensselaer Polytechnic Institute}, \textit{2016 - Present} \\
+  \textit{Education}
+  & \entrytitle{Rensselaer Polytechnic Institute}, \textit{2016 - Present} \\
   & Bachelor of Science, Computer Science, 2018. \textit{GPA: 3.13, Major GPA: 3.50} \\
   & \\
 
-  \Large{Projects}
-  & \textbf{Cardinal} \textit{https://github.com/twizmwazin/CardinalPGM} \\
-  & Created a open-source plugin to support competitive team games in Minecraft \\
-  & Lead a small team of developers from around the world \\
-  & Learned numerous development tools, including Git, Apache Maven, and Gradle \\
+  \textit{Clubs and}
+  & \entrytitle{RPISEC}, System Administrator \textit{2017 - Present}, Member \textit{2016 - Present} \\
+  \textit{Organizations}
+  & RPI's computer security club. We give weekly talks on security topics and \\
+  & win security competitions. \\
+  & \entrytitle{RCOS}, Mentor \textit{2018 - Present}, Member \textit{2017 - Present} \\
+  & Rensselaer Center for Open Source. We are a growing group of Open Source \\
+  & developers making cool things. \\
   & \\
 
-  \Large{Relevant}
-  & \textbf{Networking in the Linux Kernel} \textit{Fall 2018} \\
-  \Large{Coursework}
+  \textit{Projects}
+  & \entrytitle{Cardinal} --- \textit{https://github.com/twizmwazin/CardinalPGM} \\
+  & Created a open-source plugin to support competitive games in Minecraft \\
+  & Lead a small team of developers from around the world \\
+  & \entrytitle{Parrot} --- \textit{https://github.com/twizmwazin/Parrot} \\
+  & An experimental Minecraft server written in Go. \\
+  & \\
+
+  \textit{Relevant}
+  & \entrytitle{Networking in the Linux Kernel} --- \textit{Fall 2018} \\
+  \textit{Coursework}
   & Studied some of the inner plumbing of the Linux kernel, focusing on networking. \\
-  & \textbf{Network Programming} \textit{Spring 2018} \\
+  & \entrytitle{Network Programming} --- \textit{Spring 2018} \\
   & Studied UDP and TCP networking in C and C++ through multiple team projects. \\
-  & \textbf{Parallel Programming} \textit{Spring 2018} \\
-  & Studied techniques to write parallel applications on both single hosts and \\
-  & supercomputer-scale distributed systems. \\
-  & \textbf{A Compiler Case Study: LLVM} \textit{Fall 2017} \\
+  & \entrytitle{A Compiler Case Study: LLVM} --- \textit{Fall 2017} \\
   & Studied general compiler theory as well as exploring industry-adopted LLVM. \\
   & \\
 
-  \Large{Languages}
-  & \textbf{C and C++}, used for tests and assignments in school, and small personal projects \\
-  \Large{and Skills}
-  & \textbf{Python}, used at 128 Technology, assignments, and personal projects. \\
-  & \textbf{Java}, used for assignments and personal projects \\
-  & \textbf{Go}, used for assignments and personal projects \\
-  & \textbf{Linux}, used Unix-like platforms as a developer and administrator \\
-  & \\
+%  \textit{Languages}
+%  & \textbf{C, C++, Python, Java, Go, Linux} \\
+%  & \\
 
-  \Large{Awards}
-  & \textbf{3rd place RPI UPE Programming Competition} \\
+  \textit{Awards}
+  & \entrytitle{3rd place RPI UPE Programming Competition} \\
   & Competed against other early-undergraduate students to solve problems \\
-  & \textbf{3rd place Siena College High School Programming competition} \\
+  & \entrytitle{3rd place Siena College High School Programming competition} \\
   & Preformed 3rd of 37 teams in the 29th annual competition \\
-  & \textbf{3rd place Siena College High School Programming competition} \\
+  & \entrytitle{3rd place Siena College High School Programming competition} \\
   & Preformed 3rd of 31 teams in the 28th annual competition \\
   & \\
 
-  \Large{Work}
-  & \textbf{Software Engineering Intern}, 128 Technology. \textit{June 2018 - August 2018} \\
-  \Large{Experience}
+  \textit{Work}
+  & \entrytitle{Software Engineering Intern}, 128 Technology. \textit{June 2018 - August 2018} \\
+  \textit{Experience}
   & Implemented features in existing product components. \\
   & Ported C++ code base from Android to a typical Unix enviroment. \\
-  & \textbf{Assistant Operator}, Work Study. \textit{August 2016 - May 2017} \\
+  & \entrytitle{Assistant Operator}, Work Study. \textit{August 2016 - May 2017} \\
   & Maintain printers throughout RPI's campus. \\
   & Ensure good working condition of computer lab equipment. \\
-  & \textbf{Crew Trainer}, Wendy's. \textit{July 2015 - August 2017} \\
+  & \entrytitle{Crew Trainer}, Wendy's. \textit{July 2015 - August 2017} \\
   & Lead crew in a fast-paced, high stress environment \\
   & Communicated with customers to ensure satisfaction \\
-  & \textbf{Summer Camp Counselor}, Town of Nassau. \textit{July 2015, July 2016} \\
-  & Supervised and directed activities for children aged 5-14 \\
 
 \end{tabular}
 

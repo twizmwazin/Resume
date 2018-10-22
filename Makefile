@@ -1,5 +1,7 @@
 FILE=resume
 
+resume.pdf: build
+
 build:
 	xelatex $(FILE).tex
 
