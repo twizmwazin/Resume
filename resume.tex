@@ -1,10 +1,11 @@
 \documentclass[letterpaper,10pt,oneside]{article}
+
+\usepackage{calc}
+\usepackage{fontspec}
+\usepackage[left=.7in, right=.7in, bottom=.6in, top=.6in]{geometry}
+\usepackage{graphicx}
 \usepackage{setspace}
 
-\usepackage[left=1in, right=1in, bottom=1in, top=1in]{geometry}
-\pagenumbering{gobble}
-
-\usepackage{fontspec,kantlipsum}
 \defaultfontfeatures[Fira Sans]
 {
 Extension      = .otf ,
@@ -14,9 +15,26 @@ ItalicFont     = FiraSans-Italic,
 BoldItalicFont = FiraSans-BoldItalic,
 }
 \setmainfont{Fira Sans}
-\linespread{1.25}
+\linespread{1.15}
+\setlength{\parindent}{0pt}
+\pagenumbering{gobble}
 
-\newcommand\entrytitle[1]{{\addfontfeature{LetterSpace=2}\textbf{#1}}}
+\newcommand{\sectionheader}[1]{
+  \textbf{#1}\hspace{1em}\raisebox{0.5ex}{\rule{\linewidth-\widthof{\textbf{#1}}-1em}{0.6pt}}\par
+}
+
+\newcommand{\entrytitle}[1]{
+  \addfontfeature{LetterSpace=2}\textbf{#1}
+}
+
+\newcommand{\entry}[2]{
+  #1 \hfill \textit{#2} \\
+}
+
+\newcommand{\bulleted}[1]{
+  \raisebox{-.7ex}{\scalebox{2}{\textbullet}}\hspace{0.5em} #1 \\
+}
+
 
 \begin{document}
 
@@ -26,67 +44,61 @@ BoldItalicFont = FiraSans-BoldItalic,
     kevin@kphoenix.us --- https://github.com/twizmwazin
 \end{center}
 
+\sectionheader{Experience}
 
-\noindent
-\begin{tabular}{@{} l l}
+\entrytitle{Center for Cybersecurity and Trusted Foundations, Arizona State University} \\
+\entry{\textit{Software Engineer}}{March 2021 - Present}
+\entry{\textit{Assistant Scientific Software Engineer}}{March 2019 - March 2021}
+\bulleted{Designed and implemented core components for CHECRS, part of DARPA CHESS}
+\bulleted{Implemented modern GitHub Actions CI for angr and related projects}
+\bulleted{Administered Kubernetes, NFS, and OpenVPN services for security research}
+\entry{\entrytitle{128 Technology}, \textit{Software Engineering Intern}}{June 2018 - August 2018}
+\bulleted{Worked in as part of a team in using an agile development process}
+\bulleted{Implemented features into existing Python CLI application and C++ backend}
+\bulleted{Ported C++ networking code base from Android to embedded Linux}
 
-  \textit{Work}
-  & \entrytitle{Asst Scientific Software Engineer}, ASU, SEFCOM. \textit{March 2019 - Present} \\
-  \textit{Experience}
-  & Designed and implemented core components for CHECRS, part of DARPA CHESS \\
-  & Modernized and extended CI infrastructure for angr and related projects \\
-  & \entrytitle{Software Engineering Intern}, 128 Technology. \textit{June 2018 - August 2018} \\
-  & Implemented features in existing product components. \\
-  & Ported C++ code base from Android to an embedded Linux enviroment. \\
-  & \entrytitle{Assistant Operator}, Work Study. \textit{August 2016 - May 2017} \\
-  & Ensure good working condition of printers and computer lab equipment. \\
-  & \entrytitle{Crew Trainer}, Wendy's. \textit{July 2015 - August 2017} \\
-  & \\
+\sectionheader{Projects}
 
-  \textit{Projects}
-  & \entrytitle{CHECRS} \\
-  & Cognitive Human Enhancements for Cyber Reasoning Systems is a cutting-edge, \\
-  & human-assisted system for vulnerability discovery and patching. \\
-  & \entrytitle{Cardinal} --- \textit{https://github.com/twizmwazin/CardinalPGM} \\
-  & Created a open-source plugin to support competitive games in Minecraft \\
-  & Lead a small team of developers from around the world \\
-  & \\
+\entry{\entrytitle{angr} --- \textit{A platform-agnostic binary analysis framework}}{\textit{2019 - Present}}
+I have improved angr's automated testing, enhanced unittests, transitioned to GitHub Actions CI,
+managed releases, improved packaging/distribution, and modernized the codebase with linting and type checking.
+\\
+\entry{\entrytitle{CHECRS} --- \textit{Cognitive Human Enhancements for Cyber Reasoning Systems}}{\textit{2019 - 2022}}
+For CHECRS I was the lead engineer focusing on integration, testing, and deployment for this DARPA-funded research project,
+integrating research projects from students and partner organizations.
+\\
+\entry{\entrytitle{Cardinal} --- \textit{https://github.com/twizmwazin/CardinalPGM}}{2014 - 2016}
+I created Cardinal to provide an open-source option to enable competitive team-based matches for the growing competitve
+Minecraft community.
+\\
 
-  \textit{Education}
-  & \entrytitle{Rensselaer Polytechnic Institute}, \textit{2016 - 2018} \\
-  & Bachelor of Science, Computer Science, 2018. \textit{GPA: 3.13, Major GPA: 3.50} \\
-  & \\
+\sectionheader{Education}
 
-  \textit{Organizations}
-  & \entrytitle{RPISEC}, System Administrator \textit{2017 - 2018}, Member \textit{2016 - 2018} \\
-  & RPISEC gives weekly talks on security topics and competes in security CTFs. \\
-  & \entrytitle{RCOS}, Mentor \textit{2018}, Member \textit{2017 - 2018} \\
-  & Rensselaer Center for Open Source. RCOS is a growing group of Open Source \\
-  & developers making cool things. \\
-  & \\
+\entry{\entrytitle{Rensselaer Polytechnic Institute}}{2016 - 2018}
+Bachelor of Science in Computer Science, 2018. \textit{GPA: 3.13, Major GPA: 3.50} \\
 
-  \textit{Coursework}
-  & \entrytitle{Networking in the Linux Kernel} --- \textit{Fall 2018} \\
-  & Studied some of the inner plumbing of the Linux kernel, focusing on networking. \\
-  & \entrytitle{Network Programming} --- \textit{Spring 2018} \\
-  & Studied UDP and TCP networking in C and C++ through multiple team projects. \\
-  & \entrytitle{A Compiler Case Study: LLVM} --- \textit{Fall 2017} \\
-  & Studied general compiler theory as well as exploring industry-adopted LLVM. \\
-  & \\
+\sectionheader{Organizations}
 
-  \textit{Languages}
-  & Python, C, C++, Java, Go, Rust, Bash \\
-  & \\
+\entry{\entrytitle{RPISEC}}{}
+\entry{\textit{System Administrator} --- Maintained club services such as the website and IRC}{2017 - 2018}
+\entry{\textit{Member} --- Participated in club activities such as lectures and CTF competitions}{\textit{2016 - 2018}}
+\entry{\entrytitle{Rensselaer Center for Open Source}}{}
+\entry{\textit{Mentor}}{2018}
+\bulleted{Taught students how to find and contribute to open source projects on platforms such as GitHub}
+\bulleted{Introduced students to free software and open source licensing and philosophy}
+\bulleted{Hosted workshops covering version control, continuous integration, and automated testing}
+\entry{\textit{Member} --- Contributed to open source projects written in JavaScript, Rust, and Go}{2017 - 2018}
 
-  \textit{Awards}
-  & \entrytitle{3rd place RPI UPE Programming Competition} \\
-  & Competed against other early-undergraduate students to solve problems \\
-  & \entrytitle{3rd place in 29th Siena College High School Programming competition} \\
-  & \entrytitle{3rd place in 28th Siena College High School Programming competition} \\
-  & Preformed 3rd of 37 teams, and 3rd of 31 teams \\
-  & \\
+\sectionheader{Coursework}
 
-\end{tabular}
+\entry{\entrytitle{Networking in the Linux Kernel} --- Studied the inner plumbing of Linux's TCP/IP stack}{\textit{Fall 2018}}
+\entry{\entrytitle{Network Programming} --- Practiced developing various TCP and UDP applications in C and C++}{\textit{Spring 2018}}
+\entry{\entrytitle{A Compiler Case Study: LLVM} --- Learned and built tools using the LLVM compiler stack and Clang}{\textit{Fall 2017}}
+
+\sectionheader{Skills}
+
+\entry{\entrytitle{Programming Languages} Python, Rust, C, C++, Kotlin, Java, Bash, JavaScript}{}
+\entry{\entrytitle{Technologies \& Tools} Kubernetes, Docker, Git, Linux, Windows, NFS, Pip}{}
+\entry{\entrytitle{Focus Areas} CI/CD, Packaging, Containerization, Kubernetes, Cross-Platform Automated Testing}{}
 
 \end{document}
-
